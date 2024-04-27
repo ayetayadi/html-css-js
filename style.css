@@ -1,20 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 50%;
-    margin: 50px auto;
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-image: url('https://brunolarue.com/wp-content/uploads/2021/03/image-photographique-fait-au-quebec.jpg');
-    background-size: cover;
+    background-image: url('C:/Users/ayeta/Downloads/background.jpg');
     background-position: center;
     position: relative;
-    padding-top: 5%;
     text-align: center;
 }
 
@@ -22,21 +19,19 @@ body {
     background: #CC97C1;
     color: #fff;
     text-align: left;
-    padding: 10px 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    padding: 10px 20px;
+    position: relative;
     z-index: 1;
+    margin-bottom: 3%;
 }
 
 .header h1 {
-    margin-top: 0px;
+    margin-top: 0;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 18px;
 }
 
-.header .menu-icon {
+.menu-icon {
     position: absolute;
     top: 50%;
     right: 20px;
@@ -54,8 +49,7 @@ body {
 
 button {
     background: #fff;
-    background-position: 50px 50%;
-    border: #fff;
+    border: none;
     padding: 0;
     padding-top: 3px;
     cursor: pointer;
@@ -64,48 +58,163 @@ button {
     width: 30px;
 }
 
-.contacts {
-    background: #CC97C1;
-    color: white;
-    padding: 10px 20px;
-    text-align: left;
-    position: left;
-    padding: 20px 20px;
-    border-radius: 3px;
-    width: 50%;
+.gerer-contact {
+    display: flex;
+    flex-direction: row;
 }
 
+.contacts {
+    display: flex;
+    flex-direction: column;
+    background: #CC97C1;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px; 
+    text-align: left;
+    border-radius: 3px;
+    width: 45%;
+    position: relative;
+    margin-left: 3%;
+    margin-right: 3%;
+}
 
+.contacts h2 {
+    margin-bottom: 3%;
+}
 
-
-/* Styles pour la liste des contacts */
 .list-contact {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-/* Styles pour chaque élément de contact */
 .contact-item {
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 5px;
 }
 
-/* Styles pour l'icône de contact */
 .contact-icon {
     width: 24px;
     height: 24px;
     margin-right: 5px;
-    display: inline-block; /* Afficher l'icône en ligne */
-    vertical-align: middle; /* Alignement vertical au centre */
+    display: inline-block;
+    vertical-align: middle;
 }
 
-/* Styles pour le nom de contact */
 .contact-item p {
-    display: inline-block; /* Afficher le nom en ligne */
-    vertical-align: middle; /* Alignement vertical au centre */
+    display: inline-block;
+    vertical-align: middle;
     font-weight: bold;
-    margin: 0; /* Supprimer les marges par défaut */
+    margin: 0;
 }
+
+.contact-details {
+    display: none;
+    background: #CC97C1;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px; 
+    text-align: left;
+    border-radius: 3px;
+    margin-right: 3%;
+    top: 0;
+    width: 45%;
+    height: 30%;    
+    position: relative;
+}
+
+.contact-item.selected {
+    background-color: lightblue;
+}
+
+.contact-item.click {
+    display: block;
+}
+
+.contact-details #edit-contact-btn {
+    display: inline-flex;
+    text-align: center;
+    width: 20%;
+    line-height: 2;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: lightblue;
+    border: 1px solid white;
+}
+
+.contact-details #edit-contact-btn span {
+    white-space: nowrap;
+}
+
+#formulaire-contact {
+    display: none;
+    background: #CC97C1;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    text-align: left;
+    border-radius: 3px;
+    margin-right: 3%;
+    width: 45%;
+    position: relative;
+}
+
+#formulaire-contact fieldset {
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#formulaire-contact legend {
+    background-color: lightblue;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+#formulaire-contact input,
+#formulaire-contact select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#formulaire-contact label {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#formulaire-contact button {
+    background-color: lightblue;
+    color: #CC97C1;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    width: calc(60% - 10px);
+    line-height: 2;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: white;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+
+#formulaire-contact .gerer-btn {
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+

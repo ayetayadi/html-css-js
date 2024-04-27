@@ -9,31 +9,55 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Le carnet d'adresses local</h1>
-            <img src="C:/Users/ayeta/Downloads/icons8-menu-carr%C3%A9-50.png" class="menu-icon">
-        </div>
-        <div class="contact">
-            <h1>GÉRER LA LISTE DE CONTACTS</h1>
-            <button id="add-contact-btn"><img src="C:/Users/ayeta/Downloads/ajouter.png"
-                    alt="Ajouter un contact"></button>
-            <button id="delete-contact-btn"><img src="C:/Users/ayeta/Downloads/effacer.png"
-                    alt="Supprimer un contact"></button>
-        </div>
+    <div class="header">
+        <h1>Le carnet d'adresses local</h1>
+        <img src="C:/Users/ayeta/Downloads/icons8-menu-carr%C3%A9-50.png" class="menu-icon">
+    </div>
+    <div class="contact">
+        <h1>GÉRER LA LISTE DE CONTACTS</h1>
+        <button id="ajouter-contact-btn"><img src="C:/Users/ayeta/Downloads/ajouter.png"
+                alt="Ajouter un contact"></button>
+        <button id="supprimer-contacts-btn"><img src="C:/Users/ayeta/Downloads/effacer.png"
+                alt="Supprimer un contact"></button>
+    </div>
+    <div class="gerer-contact">
         <div class="contacts">
             <h2>Contacts enregistrés</h2>
             <div class="no-contact">
                 <p>Aucun contact enregistré</p>
             </div>
-            <div class="list-contact">
-                <div class="list-contact">
-                </div>
-                
+            <div class="list-contact"></div>
+        </div>
+        <div class="contact-details"></div>
+        <div id="formulaire-contact" style="display: none;">
+            <fieldset>
+                <legend>Saisie/modification d'un contact</legend>
+                <form>
+                    <label for="civilite">Civilité</label>
+                    <select id="civilite" name="civilite">
+                        <option value="Madame" selected>Madame</option>
+                        <option value="Mademoiselle">Mademoiselle</option>
+                        <option value="Monsieur">Monsieur</option>
+                    </select>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom">
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" id="telephone" name="telephone">
+                    <div class="gerer-btn">
+                        <button id="enregistrer-btn">Enregistrer</button>
+                        <button id="effacer-btn">Effacer</button>
+                    </div>
+
+                </form>
+            </fieldset>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
+
 
 </html>
