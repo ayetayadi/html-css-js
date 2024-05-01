@@ -175,6 +175,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Affichage de la boîte des détails du contact
                 detailsBox.style.display = 'block';
                 
+                // Ajouter un gestionnaire d'événements pour le bouton "Editer le contact"
+                var editContactBtn = document.getElementById('edit-contact-btn');
+                editContactBtn.addEventListener('click', function () {
+                    // Afficher le formulaire de contact
+                    formulaireContact.style.display = 'block';
+                    detailsBox.style.display = 'none';
+
+                    // Pré-remplir le formulaire avec les données du contact sélectionné
+                    document.getElementById('civilite').value = contact.civilite;
+                    document.getElementById('prenom').value = contact.prenom;
+                    document.getElementById('nom').value = contact.nom;
+                    document.getElementById('telephone').value = contact.telephone;
+
+                    // Ajouter un attribut pour suivre l'id du contact en cours de modification
+                    formulaireContact.setAttribute('data-contact-id', contact.id);
+                });
             });
 
             // Ajout de l'élément de contact à la liste des contacts
