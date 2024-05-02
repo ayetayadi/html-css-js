@@ -1,5 +1,3 @@
-//ajouterContact.js
-
 document.addEventListener('DOMContentLoaded', function () {
     var ajouterContactBtn = document.getElementById('ajouter-contact-btn');
     var formulaireContact = document.getElementById('formulaire-contact');
@@ -31,9 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var contacts = localStorage.getItem('contacts') ? JSON.parse(localStorage.getItem('contacts')) : [];
 
+        // Vérifie si le contact en cours d'édition est renommé
+        var contactRenomme = false;
+        if (contactId) {
+            var contactActuel = contacts.find(contact => contact.id === parseInt(contactId));
+            if (contactActuel && (contactActuel.prenom !== prenom || contactActuel.nom !== nom)) {
+                contactRenomme = true;
+            }
+        }
+
         var contactExiste = contacts.some(function (contact) {
-            return contact.prenom.toUpperCase() === prenom.toUpperCase() && contact.nom.toUpperCase() === nom.toUpperCase();
+            if (contactRenomme && contact.id === parseInt(contactId)) {
+                return false;
+            }
+            return contact.telephone === telephone;
         });
+
 
         if (contactExiste) {
             alert("Ce contact existe déjà.");
@@ -51,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         } else {
-            // Sinon, ajout d'un nouveau contact avec un nouvel identifiant généré
+            // Sinon, ajout d'un nouveau contact avec un nouvel identifiant
             var maxId = contacts.reduce((max, contact) => Math.max(max, contact.id), 0);
             var id = maxId + 1;
 

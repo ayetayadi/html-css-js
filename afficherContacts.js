@@ -1,9 +1,8 @@
-//afficherContacts.js
 document.addEventListener('DOMContentLoaded', function () {
     var contactsList = document.querySelector('.list-contact');
     var noContactDiv = document.querySelector('.no-contact');
     var formulaireContact = document.getElementById('formulaire-contact');
-    var contactsElement = document.querySelector('.contacts');
+    var detailsBox = document.querySelector('.contact-details');
 
     // Afficher les contacts enregistrés
     var contacts = JSON.parse(localStorage.getItem('contacts')) || [];
@@ -77,9 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
 
-        // Cacher les détails du contact lorsqu'on clique en dehors de la liste des contacts
+        // Cacher les détails du contact lorsqu'on clique en dehors
         document.addEventListener('click', function (event) {
-            var detailsBox = document.querySelector('.contact-details');
             if (!detailsBox.contains(event.target) && !contactsList.contains(event.target)) {
                 detailsBox.style.display = 'none';
                 var allContactItems = document.querySelectorAll('.contact-item');
@@ -87,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     item.classList.remove('selected');
                 });
             }
+
         });
+
     }
 });

@@ -1,14 +1,8 @@
-// app.js
-
 document.addEventListener('DOMContentLoaded', function () {
-    
-
-    // Inclure les différents fichiers JavaScript
     var scripts = [
         'afficherContacts.js',
         'ajouterContact.js',
-        'afficherDetails.js',
-        'modifierContact.js',
+        'contactDetails.js',
         'supprimerContacts.js'
     ];
 

@@ -1,5 +1,3 @@
-//supprimerContacts.js
-
 document.addEventListener('DOMContentLoaded', function () {
     var supprimerContactsBtn = document.getElementById('supprimer-contacts-btn');
     var contactsList = document.querySelector('.list-contact');
