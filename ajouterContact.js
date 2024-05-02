@@ -85,19 +85,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Effacer un contact
-    effacerBtn.addEventListener('click', function () {
-        // Reinitialiser des champs du formulaire
+    effacerBtn.addEventListener('click', function (event) {
+        event.preventDefault(); 
         document.getElementById('civilite').value = 'Madame';
         document.getElementById('prenom').value = '';
         document.getElementById('nom').value = '';
         document.getElementById('telephone').value = '';
-
-        // Affichage des contacts existants
-        var storedContacts = localStorage.getItem('contacts');
-        if (storedContacts) {
-            var contacts = JSON.parse(storedContacts);
-            displayContacts(contacts);
-        }
     });
+
 
 });
